@@ -60,6 +60,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponseDto> handleIllegalTransferException(final IllegalTransferException ex) {
         ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setHttpStatus(HttpStatus.BAD_REQUEST);
         errorResponseDto.setMessage(ex.getMessage());
         errorResponseDto.setDebugMessage("Cannot Transfer to self");
 
@@ -69,6 +70,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponseDto> handleInvalidAmountException(final InvalidAmountException ex) {
         ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setHttpStatus(HttpStatus.BAD_REQUEST);
         errorResponseDto.setMessage(ex.getMessage());
         errorResponseDto.setDebugMessage("Invalid Amount ");
 
@@ -79,6 +81,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<ErrorResponseDto> handleInsufficientBalanceException(final InsufficientBalanceException ex) {
         ErrorResponseDto errorResponseDto = new ErrorResponseDto();
+        errorResponseDto.setHttpStatus(HttpStatus.BAD_REQUEST);
         errorResponseDto.setMessage(ex.getMessage());
         errorResponseDto.setDebugMessage("Insufficient Balance ");
 
