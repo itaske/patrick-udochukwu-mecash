@@ -1,0 +1,14 @@
+package com.application.meCash.repository;
+
+import com.application.meCash.model.Account;
+import com.application.meCash.model.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+
+@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+    List<Transaction> findAllByAccount(Account account);
+}
